@@ -8,14 +8,14 @@ import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 import com.sam.springbatchcsvmysql.entities.Customer;
-import com.sam.springbatchcsvmysql.repository.CustomerRepository;
+import com.sam.springbatchcsvmysql.repository.ICustomerRepository;
 
 public class Listener extends JobExecutionListenerSupport {
 	private static final Logger log = LoggerFactory.getLogger(Listener.class);
 
-	private final CustomerRepository customerRepository;
+	private final ICustomerRepository customerRepository;
 
-	public Listener(CustomerRepository customerRepository) {
+	public Listener(ICustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
 

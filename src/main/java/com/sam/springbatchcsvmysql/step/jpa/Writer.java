@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.springframework.batch.item.ItemWriter;
 import com.sam.springbatchcsvmysql.entities.Customer;
-import com.sam.springbatchcsvmysql.repository.CustomerRepository;
+import com.sam.springbatchcsvmysql.repository.ICustomerRepository;
 
 public class Writer implements ItemWriter<Customer> {
 	
-	private final CustomerRepository customerRepository;
+	private final ICustomerRepository customerRepository;
 
-	public Writer(CustomerRepository customerRepository) {
+	public Writer(ICustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
 

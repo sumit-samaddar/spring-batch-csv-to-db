@@ -2,8 +2,8 @@ package com.sam.springbatchcsvmysql.step.jdbc;
 
 import java.util.List;
 import org.springframework.batch.item.ItemWriter;
-import com.sam.springbatchcsvmysql.dao.EmployeeDao;
-import com.sam.springbatchcsvmysql.model.Employee;
+import com.sam.springbatchcsvmysql.dao.IemployeeDao;
+import com.sam.springbatchcsvmysql.entities.Employee;
 
 
 /**
@@ -12,9 +12,9 @@ import com.sam.springbatchcsvmysql.model.Employee;
  */
 public class Writer implements ItemWriter<Employee> {
 
-	private final EmployeeDao employeeDao;
+	private final IemployeeDao employeeDao;
 
-	public Writer(EmployeeDao employeeDao) {
+	public Writer(IemployeeDao employeeDao) {
 		this.employeeDao = employeeDao;
 	}
 

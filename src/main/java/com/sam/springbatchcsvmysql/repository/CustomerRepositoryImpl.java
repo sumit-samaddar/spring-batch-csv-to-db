@@ -11,7 +11,7 @@ import com.sam.springbatchcsvmysql.entities.Customer;
 
 @Repository
 @Transactional
-public class CustomerRepositoryImpl implements CustomerRepository {
+public class CustomerRepositoryImpl implements ICustomerRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;

@@ -5,7 +5,7 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
-import com.sam.springbatchcsvmysql.model.Employee;
+import com.sam.springbatchcsvmysql.entities.Employee;
 
 /**
  * @author sumit

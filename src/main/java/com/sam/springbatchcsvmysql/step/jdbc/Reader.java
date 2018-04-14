@@ -5,7 +5,7 @@ import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.core.io.ClassPathResource;
-import com.sam.springbatchcsvmysql.model.Employee;
+import com.sam.springbatchcsvmysql.entities.Employee;
 
 /**
  * @author sumit
