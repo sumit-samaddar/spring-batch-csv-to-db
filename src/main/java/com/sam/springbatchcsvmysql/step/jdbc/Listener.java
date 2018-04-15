@@ -25,6 +25,7 @@ public class Listener extends JobExecutionListenerSupport {
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
+			
 			log.info("Finish Job! Check the results");
 
 			List<Employee> employees = employeeDao.loadAllEmployees();

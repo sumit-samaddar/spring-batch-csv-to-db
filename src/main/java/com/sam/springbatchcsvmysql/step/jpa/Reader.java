@@ -5,14 +5,23 @@ import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
+
 import com.sam.springbatchcsvmysql.entities.Customer;
 
+/**
+ * @author sumit
+ *
+ */
 public class Reader {
 	public static FlatFileItemReader<Customer> reader(String path) {
 
 		FlatFileItemReader<Customer> reader = new FlatFileItemReader<Customer>();
 
-		reader.setResource(new ClassPathResource(path));
+		// claspath reading
+		// reader.setResource(new ClassPathResource(path));
+		// external filepath reading
+		reader.setResource(new FileSystemResource(path));
 		reader.setLineMapper(new DefaultLineMapper<Customer>() {
 			{
 				setLineTokenizer(new DelimitedLineTokenizer() {

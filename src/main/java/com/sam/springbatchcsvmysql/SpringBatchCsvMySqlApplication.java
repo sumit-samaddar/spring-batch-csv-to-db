@@ -11,25 +11,24 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.sam.springbatchcsvmysql.step.jdbc.Listener;
-
 /**
  * @author sumit
  *
  */
 @SpringBootApplication
 public class SpringBatchCsvMySqlApplication implements CommandLineRunner {
-	
+
 	@Autowired
 	JobLauncher jobLauncher;
 
 	@Autowired
 	Job customerJob;
-	
+
 	@Autowired
 	Job employeeJob;
-	
-	private static final Logger log = LoggerFactory.getLogger(SpringBatchCsvMySqlApplication.class);
+
+	@Autowired
+	Job customerJobReverse;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBatchCsvMySqlApplication.class, args);
@@ -39,20 +38,31 @@ public class SpringBatchCsvMySqlApplication implements CommandLineRunner {
 	public void run(String... arg0) throws Exception {
 		Logger logger = LoggerFactory.getLogger(this.getClass());
 		try {
-			JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis())
-					.toJobParameters();
-			jobLauncher.run(customerJob, jobParameters);
-			
-			logger.info("Customer job complete...");
-			
+
+			/* Customer Job */
 			JobParameters jobParameters1 = new JobParametersBuilder().addLong("time", System.currentTimeMillis())
 					.toJobParameters();
-			jobLauncher.run(employeeJob, jobParameters1);
-			
+			jobLauncher.run(customerJob, jobParameters1);
+			logger.info("Customer job complete...");
+			/* Customer Job */
+
+			/* Customer File Job */
+			JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis())
+					.toJobParameters();
+			jobLauncher.run(customerJobReverse, jobParameters);
+			logger.info("Customer File job complete...");
+			/* Customer File Job */
+
+			/* Employee Job */
+			JobParameters jobParameters2 = new JobParametersBuilder().addLong("time", System.currentTimeMillis())
+					.toJobParameters();
+			jobLauncher.run(employeeJob, jobParameters2);
 			logger.info("Employee job complete...");
+			/* Employee Job */
+
 		} catch (Exception e) {
 			logger.info(e.getMessage());
 		}
-		
+
 	}
 }

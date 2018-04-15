@@ -8,8 +8,9 @@ import com.sam.springbatchcsvmysql.entities.Employee;
  *
  */
 public interface IemployeeDao {
-	
+
 	public void insert(List<? extends Employee> employees);
+
 	List<Employee> loadAllEmployees();
-	
+
 }

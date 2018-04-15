@@ -9,6 +9,10 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 import com.sam.springbatchcsvmysql.entities.Customer;
 
+/**
+ * @author sumit
+ *
+ */
 @Repository
 @Transactional
 public class CustomerRepositoryImpl implements ICustomerRepository {

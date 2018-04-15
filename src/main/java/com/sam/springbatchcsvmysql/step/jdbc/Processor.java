@@ -24,7 +24,7 @@ public class Processor implements ItemProcessor<Employee, Employee> {
 
 		final Employee fixedEmployee = new Employee(r.nextInt(), firstName, lastName);
 
-		log.info("Converting (" + employee + ") into (" + fixedEmployee + ")");
+		log.info("Converting (" + employee + ") into (" + fixedEmployee + ") ");
 
 		return fixedEmployee;
 	}

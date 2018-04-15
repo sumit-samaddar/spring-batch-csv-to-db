@@ -23,7 +23,7 @@ public class Processor implements ItemProcessor<Customer, Customer> {
 
 		final Customer fixedCustomer = new Customer(r.nextInt(), firstName, lastName);
 
-		log.info("Converting (" + customer + ") into (" + fixedCustomer + ")");
+		log.info("Converting (" + customer + ") into (" + fixedCustomer + " )");
 
 		return fixedCustomer;
 	}

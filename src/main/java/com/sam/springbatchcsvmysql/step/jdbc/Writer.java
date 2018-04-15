@@ -5,7 +5,6 @@ import org.springframework.batch.item.ItemWriter;
 import com.sam.springbatchcsvmysql.dao.IemployeeDao;
 import com.sam.springbatchcsvmysql.entities.Employee;
 
-
 /**
  * @author sumit
  *

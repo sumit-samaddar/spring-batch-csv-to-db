@@ -7,7 +7,7 @@ import com.sam.springbatchcsvmysql.entities.Customer;
 import com.sam.springbatchcsvmysql.repository.ICustomerRepository;
 
 public class Writer implements ItemWriter<Customer> {
-	
+
 	private final ICustomerRepository customerRepository;
 
 	public Writer(ICustomerRepository customerRepository) {
